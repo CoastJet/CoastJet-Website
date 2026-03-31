@@ -126,3 +126,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+
+// ========================================
+// MOBILE NAV TOGGLE
+// ========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+
+  if (!toggle || !links) return;
+
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active');
+    links.classList.toggle('open');
+  });
+
+  // Close menu when clicking a link
+  links.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('active');
+      links.classList.remove('open');
+    });
+  });
+});
