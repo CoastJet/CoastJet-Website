@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers - CoastJet</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/favicon.jpg" type="image/png" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <nav class="nav">
+      <div class="container">
+        <a href="index.html" class="nav__logo">
+          <img src="assets/favicon.jpg" alt="CoastJet Logo" class="nav__logo-img" />
+          <span class="nav__logo-text">CoastJet</span>
+        </a>
+        <ul class="nav__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fleet.html">Fleet</a></li>
+          <li><a href="pilots.html">Pilots</a></li>
+          <li><a href="careers.html" class="active">Careers</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" style="background-image: url('assets/careers_hero.png');">
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <span class="hero__eyebrow">Join the Team</span>
+        <h1 class="hero__title">Fly With CoastJet</h1>
+        <p class="hero__subtitle">
+          We're building something special in Devon. Come be part of it.
+        </p>
+        <div class="hero__cta">
+          <a href="#roles" class="btn btn--primary">See Open Roles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE CONTENT -->
+
+    <!-- INTRO BANNER -->
+    <section class="careers-intro">
+      <div class="container">
+        <div class="careers-intro__box">
+          <h2>CoastJet is currently accepting applications</h2>
+          <ul class="careers-intro__list">
+            <li>Be at least 15 years old</li>
+            <li>At least 50 flights completed (not specifically in nSky)</li>
+            <li>Strong understanding of procedures and airmanship</li>
+            <li>Ability to commit to regular flying with the airline</li>
+          </ul>
+          <a href="https://newsky.app/airline/csj/info" target="_blank" rel="noopener" class="btn btn--primary">Apply on nSky</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPEN ROLES -->
+    <section class="roles" id="roles">
+      <div class="container">
+        <span class="section__eyebrow">Open Positions</span>
+        <h2 class="section__title">Current Vacancies</h2>
+
+        <!-- SEARCH -->
+        <div class="roles__search-wrap">
+          <input
+            type="text"
+            id="rolesSearch"
+            class="roles__search"
+            placeholder="Search roles..."
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="roles__grid" id="rolesGrid">
+
+          <!-- Second Officer -->
+          <div class="role-card" data-role="second officer pilot flying">
+            <div class="role-card__header">
+              <span class="role-card__badge role-card__badge--open">Recruiting</span>
+              <h3 class="role-card__title">Second Officer</h3>
+            </div>
+            <div class="role-card__meta">
+              <span><strong>Location:</strong> Southwest England</span>
+              <span><strong>Type:</strong> Entry-Level</span>
+              <span><strong>Fleet:</strong> B737 / ATR (Planned)</span>
+            </div>
+            <p class="role-card__desc">
+              CoastJet is recruiting Second Officers to support ongoing operations. As a Second Officer you will kickstart your career with valuable skills and flying experience that will last a lifetime.
+            </p>
+            <a href="https://newsky.app/airline/csj/info" target="_blank" rel="noopener" class="btn btn--primary">Apply on nSky</a>
+          </div>
+
+          <!-- Community & Moderation -->
+          <div class="role-card" data-role="community moderation discord staff">
+            <div class="role-card__header">
+              <span class="role-card__badge role-card__badge--open">Recruiting</span>
+              <h3 class="role-card__title">Community &amp; Moderation</h3>
+            </div>
+            <div class="role-card__meta">
+              <span><strong>Location:</strong> Remote</span>
+              <span><strong>Type:</strong> Volunteer</span>
+              <span><strong>Platform:</strong> Discord</span>
+            </div>
+            <p class="role-card__desc">
+              Help us grow and look after the CoastJet community. You will moderate our Discord server, welcome new members, and help keep the community a friendly and active place.
+            </p>
+            <a href="https://discord.gg/mF24uCfrun" target="_blank" rel="noopener" class="btn btn--primary">Join our Discord</a>
+          </div>
+
+          <!-- Training Captain -->
+          <div class="role-card" data-role="training captain instructor senior">
+            <div class="role-card__header">
+              <span class="role-card__badge role-card__badge--closed">Coming Soon</span>
+              <h3 class="role-card__title">Training Captain</h3>
+            </div>
+            <div class="role-card__meta">
+              <span><strong>Location:</strong> Southwest England</span>
+              <span><strong>Type:</strong> Senior / Instructor</span>
+              <span><strong>Fleet:</strong> TBC</span>
+            </div>
+            <p class="role-card__desc">
+              Help shape the next generation of CoastJet pilots. This position will open as our training programme develops. Express your interest via Discord.
+            </p>
+            <a href="https://discord.gg/mF24uCfrun" target="_blank" rel="noopener" class="btn btn--outline">Express Interest on Discord</a>
+          </div>
+
+        </div>
+
+        <!-- No results message -->
+        <p class="roles__empty" id="rolesEmpty" style="display:none;">
+          No roles match your search. Try a different term or <a href="https://discord.gg/mF24uCfrun" target="_blank" rel="noopener">reach out on Discord</a>.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- WHY FLY WITH COASTJET -->
+    <section class="why-fly">
+      <div class="container">
+        <span class="section__eyebrow">Why CoastJet</span>
+        <h2 class="section__title">A Career Worth Flying For</h2>
+        <div class="why-fly__grid">
+
+          <div class="why-card">
+            <div class="why-card__icon">✦</div>
+            <h3 class="why-card__title">Real Experience, Real Fast</h3>
+            <p class="why-card__desc">From your first flight you'll be operating real scheduled routes, building hours and skills that translate directly to a professional aviation career.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-card__icon">◈</div>
+            <h3 class="why-card__title">A Supportive Team</h3>
+            <p class="why-card__desc">You won't be thrown in at the deep end. CoastJet's crew look out for each other — from briefings to debriefs, we fly as a team.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-card__icon">⬡</div>
+            <h3 class="why-card__title">Southwest Routes</h3>
+            <p class="why-card__desc">Based in Devon and flying across the Southwest and beyond, you'll operate routes with scenery that reminds you why you fell in love with flying.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-card__icon">↑</div>
+            <h3 class="why-card__title">Clear Progression</h3>
+            <p class="why-card__desc">CoastJet is growing. As we expand our network and fleet, doors open — there's a defined path from Second Officer all the way to Captain.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CAREER PATH -->
+    <section class="career-path">
+      <div class="container">
+        <span class="section__eyebrow">Your Journey</span>
+        <h2 class="section__title">The Path Forward</h2>
+        <p class="career-path__intro">CoastJet offers a structured progression for every pilot. Whether you're just starting out or ready to take command, there's a seat waiting for you.</p>
+
+        <div class="path__track">
+
+          <div class="path__step">
+            <div class="path__step-marker">01</div>
+            <div class="path__step-content">
+              <h3 class="path__step-title">Second Officer</h3>
+              <p class="path__step-desc">Your entry point into scheduled operations. You'll fly alongside experienced crew, build procedural discipline, and get comfortable on the line. Most new hires start here.</p>
+              <span class="path__step-tag">Entry Level · Open Now</span>
+            </div>
+          </div>
+
+          <div class="path__connector"></div>
+
+          <div class="path__step">
+            <div class="path__step-marker">02</div>
+            <div class="path__step-content">
+              <h3 class="path__step-title">First Officer</h3>
+              <p class="path__step-desc">Progress into more involved operations, supporting Captains and handling increasingly complex routes with greater autonomy and responsibility.</p>
+              <span class="path__step-tag">Mid-Level · As We Grow</span>
+            </div>
+          </div>
+
+          <div class="path__connector"></div>
+
+          <div class="path__step">
+            <div class="path__step-marker">03</div>
+            <div class="path__step-content">
+              <h3 class="path__step-title">Captain</h3>
+              <p class="path__step-desc">Take command of your aircraft and lead flights across the network. Ensure safe, efficient operations while mentoring the crew below you.</p>
+              <span class="path__step-tag">Senior · Command Role</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GROW WITH US -->
+    <section class="grow-cta">
+
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 CoastJet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
