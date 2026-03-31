@@ -1,68 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoastJet Virtual</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoastJet - Devon's Airline</title>
 
-    <!-- FONT -->
-    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Preconnect for faster font load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/favicon.jpg" type="image/png" />
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="header" id="header">
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="assets/favicon.jpg" alt="CoastJet Logo">
-                <span>CoastJet</span>
-            </div>
+  <!-- NAV -->
+  <header>
+    <nav class="nav">
+      <div class="container">
+        <a href="index.html" class="nav__logo">
+          <img src="assets/favicon.jpg" alt="CoastJet Logo" class="nav__logo-img" />
+          <span class="nav__logo-text">CoastJet</span>
+        </a>
+        <ul class="nav__links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="fleet.html">Fleet</a></li>
+          <li><a href="pilots.html">Pilots</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="fleet.html">Fleet</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="pilots.html">Pilots</a></li>
-                </ul>
-            </nav>
+  <!-- HERO -->
+  <main>
+    <section class="hero" style="background-image: url('assets/index_hero.jpg');">
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <span class="hero__eyebrow">Devon's Airline</span>
+        <h1 class="hero__title">Bringing Devon to the World</h1>
+        <p class="hero__subtitle">
+          Scheduled flights from Exeter to destinations across Europe and beyond.
+          Affordable, reliable, and proudly from Devon.
+        </p>
+        <div class="hero__cta">
+          <a href="fleet.html" class="btn btn--primary">Explore Our Fleet</a>
+          <a href="careers.html" class="btn btn--outline">Fly With Us</a>
         </div>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-
-        <div class="hero-content">
-            <h1>
-                Fly the Coast.<br>
-                Command the Sky.
-            </h1>
-
-            <p>Join CoastJet and experience precision, realism, and modern aviation.</p>
-
-            <a href="https://newsky.app/airline/csj/info" 
-               class="cta-btn" 
-               target="_blank" 
-               rel="noopener noreferrer">
-               Join Now
-            </a>
-        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- ABOUT -->
+    <!-- ABOUT COASTJET -->
     <section class="about">
-        <div class="about-container">
-            <div class="about-text">
-                <h2>FULL SITE COMING SOON!</h2>
-                
+      <div class="container">
+        <div class="about__inner">
+          <div class="about__text">
+            <span class="section__eyebrow">About Us</span>
+            <h2 class="about__title">Devon's Own Airline</h2>
+            <p class="about__lead">CoastJet was founded with one idea: Devon deserves better connections to the world. We're a virtual airline based at Exeter International, operating scheduled routes across Europe with a crew that's passionate about aviation and proud of where they come from.</p>
+            <p class="about__body">We fly on nSky - a realistic flight simulation network - giving our pilots a structured, professional experience that mirrors real airline operations. Whether it's a short hop to Dublin or a longer sector across the continent, every CoastJet flight is operated to standard.</p>
+            <div class="about__links">
+              <a href="fleet.html" class="btn btn--primary">Our Fleet</a>
+              <a href="careers.html" class="btn btn--outline">Join the Team</a>
             </div>
+          </div>
+          <div class="about__stats">
+            <div class="about__stat">
+              <span class="about__stat-value">EXT</span>
+              <span class="about__stat-label">Home Base · Exeter</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-value">B737</span>
+              <span class="about__stat-label">Primary Fleet Type</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-value">SW</span>
+              <span class="about__stat-label">Southwest England</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-value">2026</span>
+              <span class="about__stat-label">Year Founded</span>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <script src="js/main.js"></script>
+    <!-- VALUES STRIP -->
+    <section class="values">
+      <div class="container">
+        <div class="values__grid">
+          <div class="value-item">
+            <span class="value-item__icon">◈</span>
+            <h3 class="value-item__title">Professional Standards</h3>
+            <p class="value-item__desc">Every flight is operated to procedure. We take our operations seriously - from pushback to shutdown.</p>
+          </div>
+          <div class="value-item">
+            <span class="value-item__icon">⬡</span>
+            <h3 class="value-item__title">Rooted in Devon</h3>
+            <p class="value-item__desc">Exeter is our home and we're proud of it. Our routes, our crew, and our identity are shaped by the Southwest.</p>
+          </div>
+          <div class="value-item">
+            <span class="value-item__icon">✦</span>
+            <h3 class="value-item__title">Built to Grow</h3>
+            <p class="value-item__desc">We're still early. New routes, new aircraft, and new opportunities are coming - and we want the right people along for it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 CoastJet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
