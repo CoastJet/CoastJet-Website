@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fleet - CoastJet</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/favicon.jpg" type="image/png" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <nav class="nav">
+      <div class="container">
+        <a href="index.html" class="nav__logo">
+          <img src="assets/favicon.jpg" alt="CoastJet Logo" class="nav__logo-img" />
+          <span class="nav__logo-text">CoastJet</span>
+        </a>
+        <ul class="nav__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fleet.html" class="active">Fleet</a></li>
+          <li><a href="pilots.html">Pilots</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" style="background-image: url('assets/fleet_hero.png');">
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <span class="hero__eyebrow">Our Aircraft</span>
+        <h1 class="hero__title">The Fleet</h1>
+        <p class="hero__subtitle">
+          Modern, well-maintained aircraft ready to take you from Exeter to your destination.
+        </p>
+      </div>
+    </section>
+
+    <!-- BOEING 737 FAMILY -->
+    <section class="fleet-family">
+      <div class="container">
+        <div class="fleet-family__header">
+          <div class="fleet-family__label">
+            <span class="section__eyebrow">Narrow-body Jets</span>
+            <h2 class="fleet-family__title">Boeing 737 Family</h2>
+            <p class="fleet-family__intro">The core of our mainline operation. Two variants of the 737 give us flexibility across short and medium-haul routes out of Exeter.</p>
+          </div>
+          <span class="fleet-family__status fleet-family__status--active">In Service</span>
+        </div>
+        <div class="fleet-family__aircraft">
+          <div class="fleet-aircraft">
+            <div class="fleet-aircraft__identity">
+              <h3 class="fleet-aircraft__name">737-800</h3>
+              <span class="fleet-aircraft__role">Main Line</span>
+            </div>
+            <p class="fleet-aircraft__desc">The backbone of the CoastJet operation. A proven workhorse on short to medium-haul routes, carrying up to 162 passengers in a single-class layout. Reliable, efficient, and well understood by our crew.</p>
+            <div class="fleet-aircraft__specs">
+              <div class="fleet-aircraft__spec"><span>162</span><small>Passengers</small></div>
+              <div class="fleet-aircraft__spec"><span>5,765 km</span><small>Range</small></div>
+              <div class="fleet-aircraft__spec"><span>CFM56-7B</span><small>Engines</small></div>
+            </div>
+          </div>
+          <div class="fleet-aircraft__divider"></div>
+          <div class="fleet-aircraft">
+            <div class="fleet-aircraft__identity">
+              <h3 class="fleet-aircraft__name">737 MAX 8</h3>
+              <span class="fleet-aircraft__role">Main Line</span>
+            </div>
+            <p class="fleet-aircraft__desc">The next generation narrowbody. The MAX 8 brings improved fuel efficiency and extended range over the classic 737-800, making it ideal for longer sectors while keeping operating costs competitive.</p>
+            <div class="fleet-aircraft__specs">
+              <div class="fleet-aircraft__spec"><span>178</span><small>Passengers</small></div>
+              <div class="fleet-aircraft__spec"><span>6,570 km</span><small>Range</small></div>
+              <div class="fleet-aircraft__spec"><span>LEAP-1B</span><small>Engines</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATR FAMILY -->
+    <section class="fleet-family fleet-family--alt">
+      <div class="container">
+        <div class="fleet-family__header">
+          <div class="fleet-family__label">
+            <span class="section__eyebrow">Regional Turboprops</span>
+            <h2 class="fleet-family__title">ATR Family</h2>
+            <p class="fleet-family__intro">Our regional turboprop fleet, primarily operated on CoastJet New Zealand routes. The ATR family connects smaller markets that larger jets cannot serve economically.</p>
+          </div>
+          <span class="fleet-family__status fleet-family__status--active">In Service</span>
+        </div>
+        <div class="fleet-family__aircraft">
+          <div class="fleet-aircraft">
+            <div class="fleet-aircraft__identity">
+              <h3 class="fleet-aircraft__name">ATR 42-600</h3>
+              <span class="fleet-aircraft__role">Regional</span>
+            </div>
+            <p class="fleet-aircraft__desc">The smaller of our two ATR variants, built for thinner routes and shorter sectors. Primarily operated in New Zealand, the ATR 42-600 serves destinations where a full jet would be uneconomical.</p>
+            <div class="fleet-aircraft__specs">
+              <div class="fleet-aircraft__spec"><span>50</span><small>Passengers</small></div>
+              <div class="fleet-aircraft__spec"><span>1,326 km</span><small>Range</small></div>
+              <div class="fleet-aircraft__spec"><span>PW127M</span><small>Engines</small></div>
+            </div>
+          </div>
+          <div class="fleet-aircraft__divider"></div>
+          <div class="fleet-aircraft">
+            <div class="fleet-aircraft__identity">
+              <h3 class="fleet-aircraft__name">ATR 72-600</h3>
+              <span class="fleet-aircraft__role">Regional</span>
+            </div>
+            <p class="fleet-aircraft__desc">The stretched sibling of the ATR 42, offering more seats where demand warrants it. Like the 42-600, the 72-600 is at home in New Zealand operations, scaling up capacity on busier regional sectors without stepping to a full jet.</p>
+            <div class="fleet-aircraft__specs">
+              <div class="fleet-aircraft__spec"><span>70</span><small>Passengers</small></div>
+              <div class="fleet-aircraft__spec"><span>1,528 km</span><small>Range</small></div>
+              <div class="fleet-aircraft__spec"><span>PW127M</span><small>Engines</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMING SOON -->
+    <section class="fleet-family fleet-family--future">
+      <div class="container">
+        <div class="fleet-family__header">
+          <div class="fleet-family__label">
+            <span class="section__eyebrow">Coming Soon</span>
+            <h2 class="fleet-family__title">Next Aircraft</h2>
+            <p class="fleet-family__intro">Two new types planned for introduction within the next few months, expanding what CoastJet can fly and where.</p>
+          </div>
+          <span class="fleet-family__status fleet-family__status--planned">Planned</span>
+        </div>
+        <div class="fleet-family__aircraft">
+          <div class="fleet-aircraft">
+            <div class="fleet-aircraft__identity">
+              <h3 class="fleet-aircraft__name">Airbus A321neo</h3>
+              <span class="fleet-aircraft__role">Extended Range</span>
+            </div>
+            <p class="fleet-aircraft__desc">A major step up in capacity and range. The A321neo will open longer European sectors and serve higher-demand routes that our 737 fleet cannot cover as efficiently.</p>
+            <div class="fleet-aircraft__specs">
+              <div class="fleet-aircraft__spec"><span>up to 244</span><small>Passengers</small></div>
+              <div class="fleet-aircraft__spec"><span>7,400 km</span><small>Range</small></div>
+              <div class="fleet-aircraft__spec"><span>LEAP / PW1100G</span><small>Engines</small></div>
+            </div>
+          </div>
+          <div class="fleet-aircraft__divider"></div>
+          <div class="fleet-aircraft">
+            <div class="fleet-aircraft__identity">
+              <h3 class="fleet-aircraft__name">BAe RJ85</h3>
+              <span class="fleet-aircraft__role">Regional Jet</span>
+            </div>
+            <p class="fleet-aircraft__desc">A classic British regional jet that fits perfectly with CoastJet's Southwest identity. The RJ85 fills the gap between our turboprops and narrowbodies, operating regional jet routes from Exeter with character and flexibility.</p>
+            <div class="fleet-aircraft__specs">
+              <div class="fleet-aircraft__spec"><span>up to 112</span><small>Passengers</small></div>
+              <div class="fleet-aircraft__spec"><span>2,965 km</span><small>Range</small></div>
+              <div class="fleet-aircraft__spec"><span>LF507</span><small>Engines</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 CoastJet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
