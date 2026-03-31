@@ -1,1 +1,255 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* GLOBAL */
+body {
+    font-family: 'Geologica', sans-serif;
+    background: #0b1f2a;
+    color: #e6f1f5;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(11, 31, 42, 0.95),
+        rgba(11, 31, 42, 0.6),
+        rgba(11, 31, 42, 0)
+    );
+
+    backdrop-filter: blur(8px);
+
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    background: rgba(11, 31, 42, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* NAV */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    transition: padding 0.3s ease;
+}
+
+.header.scrolled .nav-container {
+    padding: 10px 0;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.logo img {
+    height: 35px;
+    transition: height 0.3s ease;
+}
+
+.header.scrolled .logo img {
+    height: 28px;
+}
+
+/* NAV LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #e6f1f5;
+    position: relative;
+}
+
+/* UNDERLINE */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #4fd1a1, #f6c453);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('../assets/hero.jpg') no-repeat center center/cover;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* OVERLAY */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(11, 31, 42, 0.85),
+        rgba(11, 31, 42, 0.6),
+        rgba(11, 31, 42, 0.85)
+    );
+}
+
+/* HERO CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* HERO TITLE */
+.hero h1 {
+    font-weight: 600;
+    font-size: clamp(2.5rem, 4.5vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* FORCE SINGLE LINE ON LARGE SCREENS */
+@media (min-width: 1200px) {
+    .hero h1 {
+        white-space: nowrap;
+    }
+
+    .hero h1 br {
+        display: none;
+    }
+}
+
+/* HERO TEXT */
+.hero p {
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #cfe3ea;
+}
+
+/* CTA BUTTON */
+.cta-btn {
+    position: relative;
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 8px;
+
+    background: linear-gradient(90deg, #1f8f5a, #4fd1a1);
+    color: #0b1f2a;
+    font-weight: 600;
+    text-decoration: none;
+
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    background: linear-gradient(90deg, #4fd1a1, #f6c453);
+    box-shadow:
+        0 10px 25px rgba(79, 209, 161, 0.25),
+        0 0 15px rgba(246, 196, 83, 0.2);
+}
+
+.cta-btn:active {
+    transform: scale(0.98);
+}
+
+/* SHIMMER */
+.cta-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+
+    transform: skewX(-25deg);
+}
+
+.cta-btn:hover::before {
+    animation: shimmer 0.9s ease forwards;
+}
+
+@keyframes shimmer {
+    100% {
+        left: 125%;
+    }
+}
+
+/* ABOUT SECTION */
+.about {
+    background: linear-gradient(
+        to bottom,
+        #0b1f2a,
+        #122b36
+    );
+    padding: 100px 20px;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #cfe3ea;
+    line-height: 1.7;
+}
