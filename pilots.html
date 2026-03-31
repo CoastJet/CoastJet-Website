@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pilots - CoastJet</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/favicon.jpg" type="image/png" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <nav class="nav">
+      <div class="container">
+        <a href="index.html" class="nav__logo">
+          <img src="assets/favicon.jpg" alt="CoastJet Logo" class="nav__logo-img" />
+          <span class="nav__logo-text">CoastJet</span>
+        </a>
+        <ul class="nav__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fleet.html">Fleet</a></li>
+          <li><a href="pilots.html" class="active">Pilots</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" style="background-image: url('assets/pilots_hero.jpg');">
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <span class="hero__eyebrow">The Team</span>
+        <h1 class="hero__title">Our Pilots</h1>
+        <p class="hero__subtitle">
+          Experienced, professional, and proud to fly for Devon.
+        </p>
+      </div>
+    </section>
+
+    <!-- LIVE MAP -->
+    <section class="live-map-section">
+      <div class="container">
+        <span class="section__eyebrow">Live Operations</span>
+        <h2 class="section__title">Live Pilot Map</h2>
+        <p class="live-map__desc">See CoastJet pilots flying right now on our interactive live map!</p>
+
+        <div class="live-map__wrap" id="mapWrap" style="display:none;">
+          <div class="live-map__toolbar">
+            <span class="live-map__toolbar-label" id="mapStatusLabel">Live - CoastJet Operations</span>
+            <div class="live-map__toolbar-controls">
+              <button class="map-toggle-btn active" id="styleDark" data-style="dark">Dark</button>
+              <button class="map-toggle-btn" id="styleLight" data-style="light">Light</button>
+            </div>
+          </div>
+          <iframe
+            id="nSkyMap"
+            class="live-map__iframe"
+            src=""
+            allowfullscreen
+            loading="lazy"
+            title="CoastJet Live Pilot Map"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- PILOT ROSTER PLACEHOLDER -->
+    <section class="roster-section">
+      <div class="container">
+        <span class="section__eyebrow">The Team</span>
+        <h2 class="section__title">Our Pilots</h2>
+        <p class="roster-intro">CoastJet is home to a growing crew of dedicated virtual aviators, flying out of Exeter across our network. Pilot profiles coming soon.</p>
+        <div class="roster-coming-soon">
+          <span class="roster-coming-soon__icon">✦</span>
+          <p>Pilot profiles will be listed here as the roster grows. <a href="careers.html">Join the team</a> to be among the first.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 CoastJet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      const KEY_STORAGE = 'coastjet_nsky_key';
+      const DEFAULT_STYLE = 'dark';
+
+      const apiKeyInput  = document.getElementById('apiKeyInput');
+      const loadMapBtn   = document.getElementById('loadMapBtn');
+      const clearKeyBtn  = document.getElementById('clearKeyBtn');
+      const mapWrap      = document.getElementById('mapWrap');
+      const nSkyMap      = document.getElementById('nSkyMap');
+      const styleDark    = document.getElementById('styleDark');
+      const styleLight   = document.getElementById('styleLight');
+
+      let currentStyle = DEFAULT_STYLE;
+
+      function buildUrl(key, style) {
+        return 'https://newsky.app/airline/public/map?style=' + style + '&token=' + encodeURIComponent(key);
+      }
+
+      function showMap(key) {
+        nSkyMap.src = buildUrl(key, currentStyle);
+        mapWrap.style.display = 'block';
+        clearKeyBtn.style.display = '';
+        apiKeyInput.value = '';
+        apiKeyInput.type = 'password';
+      }
+
+      function clearMap() {
+        nSkyMap.src = '';
+        mapWrap.style.display = 'none';
+        clearKeyBtn.style.display = 'none';
+        localStorage.removeItem(KEY_STORAGE);
+      }
+
+      // Load saved key on page load
+      const saved = localStorage.getItem(KEY_STORAGE);
+      if (saved) {
+        showMap(saved);
+      }
+
+      loadMapBtn.addEventListener('click', function () {
+        const key = apiKeyInput.value.trim();
+        if (!key) return;
+        localStorage.setItem(KEY_STORAGE, key);
+        showMap(key);
+      });
+
+      apiKeyInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') loadMapBtn.click();
+      });
+
+      clearKeyBtn.addEventListener('click', clearMap);
+
+      // Style toggle
+      [styleDark, styleLight].forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          currentStyle = btn.dataset.style;
+          styleDark.classList.toggle('active', currentStyle === 'dark');
+          styleLight.classList.toggle('active', currentStyle === 'light');
+          const key = localStorage.getItem(KEY_STORAGE);
+          if (key) nSkyMap.src = buildUrl(key, currentStyle);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
