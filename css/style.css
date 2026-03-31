@@ -656,3 +656,96 @@ a:hover { opacity: 0.75; }
 .footer p {
   font-size: 0.85rem; color: var(--color-text-muted); margin-inline: auto;
 }
+
+/* =============================================
+   MOBILE NAV
+   ============================================= */
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.nav__toggle span {
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  transition: all 300ms ease;
+}
+
+/* Animate into X */
+.nav__toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav__toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.nav__toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Site */
+@media (max-width: 768px) {
+
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__links {
+    position: fixed; /* 🔥 key change */
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+
+    height: calc(100vh - var(--nav-height)); /* full screen */
+    overflow-y: auto; /* 🔥 enables scrolling */
+
+    flex-direction: column;
+    background: var(--color-bg);
+
+    border-top: 1px solid var(--color-border);
+
+    transform: translateY(-100%);
+    transition: transform 300ms ease;
+
+    -webkit-overflow-scrolling: touch; /* 🔥 smooth iOS scrolling */
+  }
+
+  .nav__links.open {
+    transform: translateY(0);
+  }
+
+  .nav__links li {
+    padding: var(--space-lg) var(--space-xl);
+  }
+
+  .nav__links a {
+    display: block;
+    font-size: 1.1rem;
+  }
+}
+
+/* =============================================
+   MOBILE NAV FIX (OVERRIDES)
+   ============================================= */
+
+@media (max-width: 768px) {
+
+  /* Force menu to sit under nav, not over it */
+  .nav__links {
+    top: 0 !important;
+    height: 100vh !important;
+    padding-top: var(--nav-height) !important;
+
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+
+    z-index: 90 !important; /* below nav */
+  }
+
+}
