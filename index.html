@@ -37,9 +37,39 @@
             <li><a href="pilots.html">Pilots</a></li>
             <li><a href="careers.html">Careers</a></li>
             </ul>
+
+            <!-- CREW PANEL TRIGGER (subtle — visible on desktop & mobile) -->
+            <button class="nav__crew-btn" id="crewToggle" aria-label="Open crew menu" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
         </div>
     </nav>
   </header>
+
+  <!-- CREW PANEL OVERLAY -->
+  <div class="crew-panel" id="crewPanel" aria-hidden="true">
+    <div class="crew-panel__inner">
+      <div class="crew-panel__header">
+        <span class="crew-panel__label">Crew Area</span>
+        <button class="crew-panel__close" id="crewClose" aria-label="Close crew menu">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 2L20 20M20 2L2 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="crew-panel__nav">
+        <a href="sops.html" class="crew-panel__link">
+          <span class="crew-panel__link-icon">◈</span>
+          <span class="crew-panel__link-text">Standard Operating Procedures</span>
+          <span class="crew-panel__link-arrow">→</span>
+        </a>
+        <!-- Add more crew links here as needed -->
+      </nav>
+      <p class="crew-panel__note">This area is for CoastJet crew members only.</p>
+    </div>
+  </div>
 
   <!-- HERO -->
   <main>
@@ -89,27 +119,27 @@
               <!-- ── NEWS CARD 1 ────────────────────────────────────── -->
               <article class="news-card">
                 <div class="news-card__img-wrap">
-                  <img src="https://media.cntraveler.com/photos/68f1516faaf26e84aa9f2ed7/4:3/w_1600%2Ch_1200%2Cc_limit/Boston%2520Night%2520Life-GettyImages-2206859926.jpg" alt="Boeing 737 in flight" class="news-card__img" />
+                  <img src="assets/fleet_hero.png" alt="Boeing 737 in flight" class="news-card__img" />
                 </div>
                 <div class="news-card__body">
                   <div class="news-card__meta">
-                    <span class="news-card__category">Network</span>
+                    <span class="news-card__category">Fleet</span>
                     <span class="news-card__date">April 2026</span>
                   </div>
-                  <h3 class="news-card__title">CoastJet Launches Boston Route</h3>
-                  <p class="news-card__desc">Operating exclusively on the Boeing 737 MAX 8 & Airbus A321NEO aircraft, passengers can now enjoy a luxurious flight to Boston with CoastJet!</p>
+                  <h3 class="news-card__title">CoastJet Launches with Boeing 737 Fleet</h3>
+                  <p class="news-card__desc">CoastJet begins operations out of Exeter International with a Boeing 737-800 and 737 MAX 8, ready to connect Devon to destinations across Europe.</p>
                 </div>
               </article>
 
               <!-- ── NEWS CARD 2 ────────────────────────────────────── -->
               <article class="news-card">
                 <div class="news-card__img-wrap">
-                  <img src="https://www.pilotcareernews.com/wp-content/uploads/2015/06/the-office-boeing-737-800-83753109.jpg" alt="Pilot in cockpit" class="news-card__img" />
+                  <img src="assets/careers_hero.png" alt="Pilot in cockpit" class="news-card__img" />
                 </div>
                 <div class="news-card__body">
                   <div class="news-card__meta">
                     <span class="news-card__category">Careers</span>
-                    <span class="news-card__date">March 2026</span>
+                    <span class="news-card__date">April 2026</span>
                   </div>
                   <h3 class="news-card__title">Pilot Recruitment Now Open</h3>
                   <p class="news-card__desc">We're accepting applications for Second Officers. If you have 50 flights and a passion for aviation, CoastJet wants to hear from you.</p>
@@ -119,15 +149,15 @@
               <!-- ── NEWS CARD 3 ────────────────────────────────────── -->
               <article class="news-card">
                 <div class="news-card__img-wrap">
-                  <img src="https://t.plnspttrs.net/33882/1823890_4e47253e51_280.jpg" alt="Wing view at sunset" class="news-card__img" />
+                  <img src="assets/index_hero.jpg" alt="Wing view at sunset" class="news-card__img" />
                 </div>
                 <div class="news-card__body">
                   <div class="news-card__meta">
-                    <span class="news-card__category">Fleet</span>
+                    <span class="news-card__category">Network</span>
                     <span class="news-card__date">April 2026</span>
                   </div>
-                  <h3 class="news-card__title">The ATR Aircraft</h3>
-                  <p class="news-card__desc">CoastJet is considering the use of ATR 42's and 72's for possible operations in New Zealand. With this comes many jobs and opportunities for locals around Christchurch.</p>
+                  <h3 class="news-card__title">Southwest Routes Coming This Spring</h3>
+                  <p class="news-card__desc">CoastJet's first scheduled routes will connect Exeter to key European destinations. Route announcements coming very soon.</p>
                 </div>
               </article>
 

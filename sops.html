@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOPs - CoastJet Crew</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/favicon.jpg" type="image/png" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <nav class="nav">
+        <div class="container">
+            <a href="index.html" class="nav__logo">
+            <img src="assets/favicon.jpg" alt="CoastJet Logo" class="nav__logo-img" />
+            <span class="nav__logo-text">CoastJet</span>
+            </a>
+
+            <!-- HAMBURGER -->
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+            </button>
+
+            <!-- LINKS -->
+            <ul class="nav__links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fleet.html">Fleet</a></li>
+            <li><a href="pilots.html">Pilots</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            </ul>
+
+            <!-- CREW PANEL TRIGGER (subtle — visible on desktop & mobile) -->
+            <button class="nav__crew-btn" id="crewToggle" aria-label="Open crew menu" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+        </div>
+    </nav>
+  </header>
+
+  <!-- CREW PANEL OVERLAY -->
+  <div class="crew-panel" id="crewPanel" aria-hidden="true">
+    <div class="crew-panel__inner">
+      <div class="crew-panel__header">
+        <span class="crew-panel__label">Crew Area</span>
+        <button class="crew-panel__close" id="crewClose" aria-label="Close crew menu">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 2L20 20M20 2L2 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="crew-panel__nav">
+        <a href="sops.html" class="crew-panel__link crew-panel__link--active">
+          <span class="crew-panel__link-icon">◈</span>
+          <span class="crew-panel__link-text">Standard Operating Procedures</span>
+          <span class="crew-panel__link-arrow">→</span>
+        </a>
+        <!-- Add more crew links here as needed -->
+      </nav>
+      <p class="crew-panel__note">This area is for CoastJet crew members only.</p>
+    </div>
+  </div>
+
+  <!-- PAGE -->
+  <main>
+
+    <!-- HERO -->
+    <section class="sops-hero">
+      <div class="sops-hero__overlay"></div>
+      <div class="container sops-hero__content">
+        <span class="hero__eyebrow">Crew Area</span>
+        <h1 class="hero__title">Standard Operating Procedures</h1>
+        <p class="hero__subtitle">CoastJet flight operations documentation for crew use.</p>
+      </div>
+    </section>
+
+    <!-- SOP DOCUMENT SECTION -->
+    <section class="sops-doc-section">
+      <div class="container">
+
+        <div class="sops-doc-header">
+          <span class="section__eyebrow">Documentation</span>
+          <h2 class="section__title">CoastJet SOPs</h2>
+          <p class="sops-doc-intro">The document below contains CoastJet's standard operating procedures. All crew are expected to be familiar with and operate in accordance with these procedures at all times.</p>
+        </div>
+
+        <!-- ══════════════════════════════════════════════
+             GOOGLE DOCS EMBED
+             Replace the src below with your Google Docs
+             published embed URL. In Google Docs go to:
+             File → Share → Publish to web → Embed
+             Then paste the src URL here.
+             ══════════════════════════════════════════════ -->
+        <div class="sops-doc-wrap" id="sopsDocWrap">
+          <div class="sops-doc-toolbar">
+            <span class="sops-doc-toolbar__label">
+              <span class="sops-doc-toolbar__dot"></span>
+              CoastJet SOP Document
+            </span>
+            <a
+              href="#"
+              class="sops-doc-toolbar__open btn btn--outline"
+              id="sopsOpenLink"
+              target="_blank"
+              rel="noopener"
+              title="Open in Google Docs"
+            >
+              Open in Docs ↗
+            </a>
+          </div>
+          <div class="sops-doc-embed-wrap">
+            <iframe
+              id="sopsFrame"
+              class="sops-doc-iframe"
+              src=""
+              allowfullscreen
+              loading="lazy"
+              title="CoastJet Standard Operating Procedures"
+            ></iframe>
+            <!-- Shown when no src is set yet -->
+            <div class="sops-doc-placeholder" id="sopsPlaceholder">
+              <span class="sops-doc-placeholder__icon">◈</span>
+              <p class="sops-doc-placeholder__text">SOP document coming soon.<br>Check back here or ask on Discord.</p>
+            </div>
+          </div>
+        </div>
+        <!-- ══ END EMBED ══ -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 CoastJet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
