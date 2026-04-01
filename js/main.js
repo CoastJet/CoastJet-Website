@@ -140,7 +140,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!crewToggle || !crewPanel) return;
 
   function openCrew() {
-    crewPanel.classList.add('open');
+    crewPanel.classList.add('is-visible');
+    // One frame later so display:flex is painted before opacity transition fires
+    requestAnimationFrame(() => {
+      crewPanel.classList.add('open');
+    });
     crewPanel.setAttribute('aria-hidden', 'false');
     crewToggle.classList.add('active');
     crewToggle.setAttribute('aria-expanded', 'true');
@@ -153,6 +157,12 @@ document.addEventListener('DOMContentLoaded', () => {
     crewToggle.classList.remove('active');
     crewToggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    // Remove is-visible after transition ends so it goes back to display:none
+    crewPanel.addEventListener('transitionend', () => {
+      if (!crewPanel.classList.contains('open')) {
+        crewPanel.classList.remove('is-visible');
+      }
+    }, { once: true });
   }
 
   crewToggle.addEventListener('click', () => {
