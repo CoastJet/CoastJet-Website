@@ -130,6 +130,88 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ========================================
+// NEWS CAROUSEL
+// ========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const track     = document.getElementById('newsTrack');
+  const prevBtn   = document.getElementById('newsPrev');
+  const nextBtn   = document.getElementById('newsNext');
+  const dotsWrap  = document.getElementById('newsDots');
+
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const cards = Array.from(track.querySelectorAll('.news-card'));
+  if (cards.length === 0) return;
+
+  // Work out how many cards are visible at current breakpoint
+  function getVisible() {
+    const w = window.innerWidth;
+    if (w <= 560) return 1;
+    if (w <= 900) return 2;
+    return 3;
+  }
+
+  let current = 0; // index of the first visible card
+
+  // Build dots
+  function buildDots() {
+    if (!dotsWrap) return;
+    dotsWrap.innerHTML = '';
+    const maxIndex = Math.max(0, cards.length - getVisible());
+    for (let i = 0; i <= maxIndex; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'news__dot' + (i === current ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    if (!dotsWrap) return;
+    dotsWrap.querySelectorAll('.news__dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === current);
+    });
+  }
+
+  function goTo(index) {
+    const visible   = getVisible();
+    const maxIndex  = Math.max(0, cards.length - visible);
+    current = Math.max(0, Math.min(index, maxIndex));
+
+    // Calculate card width + gap
+    const card     = cards[0];
+    const style    = getComputedStyle(track);
+    const gap      = parseFloat(style.gap) || 0;
+    const offset   = current * (card.offsetWidth + gap);
+
+    track.style.transform = `translateX(-${offset}px)`;
+
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current >= maxIndex;
+
+    updateDots();
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // Re-init on resize (breakpoint may change visible count)
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      buildDots();
+      goTo(current); // re-clamp and recalculate offset
+    }, 120);
+  });
+
+  buildDots();
+  goTo(0);
+});
+
+
+// ========================================
 // MOBILE NAV TOGGLE
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
