@@ -60,6 +60,95 @@
     </section>
   </main>
 
+    <!-- =============================================
+         LATEST NEWS
+         To add a new article: copy one <article class="news-card"> block
+         and paste it inside <div class="news__track" id="newsTrack">.
+         Change the image src, date, category, title, and description.
+         Everything else (styling, arrows, behaviour) is automatic.
+         ============================================= -->
+    <section class="news">
+      <div class="news__outer">
+        <div class="container news__header-wrap">
+          <span class="section__eyebrow">Latest News</span>
+          <h2 class="section__title news__title">From CoastJet</h2>
+        </div>
+
+        <div class="news__carousel-wrap">
+          <!-- PREV ARROW -->
+          <button class="news__arrow news__arrow--prev" id="newsPrev" aria-label="Previous article">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <!-- TRACK OUTER (masks overflow) -->
+          <div class="news__track-outer">
+            <div class="news__track" id="newsTrack">
+
+              <!-- ── NEWS CARD 1 ────────────────────────────────────── -->
+              <article class="news-card">
+                <div class="news-card__img-wrap">
+                  <img src="assets/fleet_hero.png" alt="Boeing 737 in flight" class="news-card__img" />
+                </div>
+                <div class="news-card__body">
+                  <div class="news-card__meta">
+                    <span class="news-card__category">Fleet</span>
+                    <span class="news-card__date">April 2026</span>
+                  </div>
+                  <h3 class="news-card__title">CoastJet Launches with Boeing 737 Fleet</h3>
+                  <p class="news-card__desc">CoastJet begins operations out of Exeter International with a Boeing 737-800 and 737 MAX 8, ready to connect Devon to destinations across Europe.</p>
+                </div>
+              </article>
+
+              <!-- ── NEWS CARD 2 ────────────────────────────────────── -->
+              <article class="news-card">
+                <div class="news-card__img-wrap">
+                  <img src="assets/careers_hero.png" alt="Pilot in cockpit" class="news-card__img" />
+                </div>
+                <div class="news-card__body">
+                  <div class="news-card__meta">
+                    <span class="news-card__category">Careers</span>
+                    <span class="news-card__date">April 2026</span>
+                  </div>
+                  <h3 class="news-card__title">Pilot Recruitment Now Open</h3>
+                  <p class="news-card__desc">We're accepting applications for Second Officers. If you have 50 flights and a passion for aviation, CoastJet wants to hear from you.</p>
+                </div>
+              </article>
+
+              <!-- ── NEWS CARD 3 ────────────────────────────────────── -->
+              <article class="news-card">
+                <div class="news-card__img-wrap">
+                  <img src="assets/index_hero.jpg" alt="Wing view at sunset" class="news-card__img" />
+                </div>
+                <div class="news-card__body">
+                  <div class="news-card__meta">
+                    <span class="news-card__category">Network</span>
+                    <span class="news-card__date">April 2026</span>
+                  </div>
+                  <h3 class="news-card__title">Southwest Routes Coming This Spring</h3>
+                  <p class="news-card__desc">CoastJet's first scheduled routes will connect Exeter to key European destinations. Route announcements coming very soon.</p>
+                </div>
+              </article>
+
+              <!-- ── ADD MORE CARDS BELOW — just copy/paste a block above ── -->
+
+            </div>
+          </div>
+
+          <!-- NEXT ARROW -->
+          <button class="news__arrow news__arrow--next" id="newsNext" aria-label="Next article">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- DOTS -->
+        <div class="news__dots" id="newsDots"></div>
+      </div>
+    </section>
+
     <!-- ABOUT COASTJET -->
     <section class="about">
       <div class="container">
