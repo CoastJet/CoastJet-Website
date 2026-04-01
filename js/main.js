@@ -130,6 +130,72 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ========================================
+// CREW PANEL
+// ========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const crewToggle = document.getElementById('crewToggle');
+  const crewPanel  = document.getElementById('crewPanel');
+  const crewClose  = document.getElementById('crewClose');
+
+  if (!crewToggle || !crewPanel) return;
+
+  function openCrew() {
+    crewPanel.classList.add('open');
+    crewPanel.setAttribute('aria-hidden', 'false');
+    crewToggle.classList.add('active');
+    crewToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCrew() {
+    crewPanel.classList.remove('open');
+    crewPanel.setAttribute('aria-hidden', 'true');
+    crewToggle.classList.remove('active');
+    crewToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  crewToggle.addEventListener('click', () => {
+    crewPanel.classList.contains('open') ? closeCrew() : openCrew();
+  });
+
+  if (crewClose) crewClose.addEventListener('click', closeCrew);
+
+  // Click on backdrop (not the inner panel) closes it
+  crewPanel.addEventListener('click', (e) => {
+    if (!e.target.closest('.crew-panel__inner')) closeCrew();
+  });
+
+  // Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && crewPanel.classList.contains('open')) closeCrew();
+  });
+});
+
+
+// ========================================
+// SOP PAGE — show/hide placeholder
+// ========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const frame       = document.getElementById('sopsFrame');
+  const placeholder = document.getElementById('sopsPlaceholder');
+  const openLink    = document.getElementById('sopsOpenLink');
+
+  if (!frame) return;
+
+  // If a src has been set, hide the placeholder and update the open link
+  if (frame.src && frame.src !== window.location.href) {
+    if (placeholder) placeholder.classList.add('hidden');
+    // Sync the "Open in Docs" button href to match the embed src
+    if (openLink) {
+      // Convert embedded /pub URL back to a regular docs URL if needed
+      openLink.href = frame.src.replace('/pub?embedded=true', '/pub');
+    }
+  }
+});
+
+
+// ========================================
 // NEWS CAROUSEL
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
