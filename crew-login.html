@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crew Login - CoastJet</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/favicon.jpg" type="image/png" />
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <div class="container">
+        <a href="index.html" class="nav__logo">
+          <img src="assets/favicon.jpg" alt="CoastJet Logo" class="nav__logo-img" />
+          <span class="nav__logo-text">CoastJet</span>
+        </a>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav__links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fleet.html">Fleet</a></li>
+          <li><a href="pilots.html">Pilots</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li class="nav__item nav__item--has-dropdown">
+            <button class="nav__dropdown-toggle" type="button" aria-expanded="false">Operations</button>
+            <ul class="nav__dropdown" aria-label="Operations pages">
+              <li><a href="ops-eu.html">EU Operations</a></li>
+              <li><a href="ops-nz.html">NZ Operations</a></li>
+            </ul>
+          </li>
+          <li><a href="crew-login.html" class="nav__crew-link active">Crew Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="background-image: url('assets/careers_hero.jpg'); min-height: 70vh;">
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <span class="hero__eyebrow">Crew Access</span>
+        <h1 class="hero__title">Crew Login</h1>
+        <p class="hero__subtitle">Prototype access portal for CoastJet crew tools.</p>
+      </div>
+    </section>
+
+    <section class="crew-login">
+      <div class="container">
+        <div class="crew-login__card">
+          <span class="section__eyebrow">Internal Access</span>
+          <h2 class="section__title">Sign In</h2>
+          <p class="crew-login__intro">This is a front-end prototype login page for now. Authentication logic will be added later.</p>
+
+          <form class="crew-login__form" action="#" method="post">
+            <label class="crew-login__label" for="crewEmail">Crew Email</label>
+            <input class="crew-login__input" id="crewEmail" type="email" placeholder="name@coastjet.crew" required>
+
+            <label class="crew-login__label" for="crewPassword">Password</label>
+            <input class="crew-login__input" id="crewPassword" type="password" placeholder="••••••••" required>
+
+            <button type="submit" class="btn btn--primary">Sign In (Demo)</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 CoastJet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
