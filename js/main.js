@@ -130,60 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ========================================
-// CREW PANEL
-// ========================================
-document.addEventListener('DOMContentLoaded', () => {
-  const crewToggle = document.getElementById('crewToggle');
-  const crewPanel  = document.getElementById('crewPanel');
-  const crewClose  = document.getElementById('crewClose');
-
-  if (!crewToggle || !crewPanel) return;
-
-  function openCrew() {
-    crewPanel.classList.add('is-visible');
-    // One frame later so display:flex is painted before opacity transition fires
-    requestAnimationFrame(() => {
-      crewPanel.classList.add('open');
-    });
-    crewPanel.setAttribute('aria-hidden', 'false');
-    crewToggle.classList.add('active');
-    crewToggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeCrew() {
-    crewPanel.classList.remove('open');
-    crewPanel.setAttribute('aria-hidden', 'true');
-    crewToggle.classList.remove('active');
-    crewToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-    // Remove is-visible after transition ends so it goes back to display:none
-    crewPanel.addEventListener('transitionend', () => {
-      if (!crewPanel.classList.contains('open')) {
-        crewPanel.classList.remove('is-visible');
-      }
-    }, { once: true });
-  }
-
-  crewToggle.addEventListener('click', () => {
-    crewPanel.classList.contains('open') ? closeCrew() : openCrew();
-  });
-
-  if (crewClose) crewClose.addEventListener('click', closeCrew);
-
-  // Click on backdrop (not the inner panel) closes it
-  crewPanel.addEventListener('click', (e) => {
-    if (!e.target.closest('.crew-panel__inner')) closeCrew();
-  });
-
-  // Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && crewPanel.classList.contains('open')) closeCrew();
-  });
-});
-
-
-// ========================================
 // SOP PAGE — show/hide placeholder
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -288,17 +234,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ========================================
-// MOBILE NAV TOGGLE
+// MOBILE NAV TOGGLE + NAV DROPDOWN
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
+  const dropdownToggles = document.querySelectorAll('.nav__dropdown-toggle');
 
   if (!toggle || !links) return;
 
   toggle.addEventListener('click', () => {
-    toggle.classList.toggle('active');
-    links.classList.toggle('open');
+    const isOpen = toggle.classList.toggle('active');
+    links.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  dropdownToggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (window.innerWidth > 768) return;
+
+      const item = btn.closest('.nav__item--has-dropdown');
+      if (!item) return;
+
+      const willOpen = !item.classList.contains('open');
+      item.classList.toggle('open', willOpen);
+      btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      document.querySelectorAll('.nav__item--has-dropdown.open').forEach(item => item.classList.remove('open'));
+      dropdownToggles.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+    }
   });
 
   // Close menu when clicking a link
@@ -306,6 +274,35 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', () => {
       toggle.classList.remove('active');
       links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
     });
+  });
+});
+
+// ========================================
+// CREW LOGIN (DEMO)
+// ========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('crewLoginForm');
+  const usernameInput = document.getElementById('crewEmail');
+  const passwordInput = document.getElementById('crewPassword');
+  const error = document.getElementById('crewLoginError');
+
+  if (!form || !usernameInput || !passwordInput) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value;
+
+    if (username === 'CJPilots' && password === '737') {
+      window.location.href = 'crew-hub.html';
+      return;
+    }
+
+    if (error) {
+      error.textContent = 'Incorrect username or password.';
+    }
   });
 });
