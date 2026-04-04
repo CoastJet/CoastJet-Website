@@ -251,6 +251,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   dropdownToggles.forEach(btn => {
     btn.addEventListener('click', () => {
+      if (window.innerWidth > 768) return;
+
       const item = btn.closest('.nav__item--has-dropdown');
       if (!item) return;
 
@@ -258,6 +260,13 @@ document.addEventListener('DOMContentLoaded', () => {
       item.classList.toggle('open', willOpen);
       btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
     });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      document.querySelectorAll('.nav__item--has-dropdown.open').forEach(item => item.classList.remove('open'));
+      dropdownToggles.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+    }
   });
 
   // Close menu when clicking a link
