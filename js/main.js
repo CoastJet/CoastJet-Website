@@ -278,3 +278,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// ========================================
+// CREW LOGIN (DEMO)
+// ========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('crewLoginForm');
+  const usernameInput = document.getElementById('crewEmail');
+  const passwordInput = document.getElementById('crewPassword');
+  const error = document.getElementById('crewLoginError');
+
+  if (!form || !usernameInput || !passwordInput) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value;
+
+    if (username === 'CJPilots' && password === '737') {
+      window.location.href = 'crew-hub.html';
+      return;
+    }
+
+    if (error) {
+      error.textContent = 'Incorrect username or password.';
+    }
+  });
+});

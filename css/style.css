@@ -1505,3 +1505,51 @@ a:hover { opacity: 0.75; }
 
   .nav__item--has-dropdown.open .nav__dropdown { display: block; }
 }
+
+.crew-login__error {
+  min-height: 1.2rem;
+  color: #ff8f8f;
+  font-size: 0.85rem;
+}
+
+.crew-hub {
+  padding-block: var(--space-3xl);
+  background: var(--color-bg);
+}
+
+.crew-hub__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+}
+
+.crew-hub__card {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--space-xl);
+  transition: border-color 250ms ease, transform 250ms ease;
+}
+
+.crew-hub__card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+.crew-hub__card-icon {
+  color: var(--color-accent-alt);
+  font-size: 1.3rem;
+}
+
+.crew-hub__card-title {
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
+
+.crew-hub__card-desc {
+  margin: 0;
+}

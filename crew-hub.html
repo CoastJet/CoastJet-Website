@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crew Login - CoastJet</title>
+  <title>Crew Hub - CoastJet</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,33 +46,26 @@
   </header>
 
   <main>
-    <section class="hero" style="background-image: url('assets/careers_hero.jpg'); min-height: 70vh;">
+    <section class="hero" style="background-image: url('assets/index_hero.jpg'); min-height: 65vh;">
       <div class="hero__overlay"></div>
       <div class="container hero__content">
-        <span class="hero__eyebrow">Crew Access</span>
-        <h1 class="hero__title">Crew Login</h1>
-        <p class="hero__subtitle">Sign in to open the CoastJet crew area.</p>
+        <span class="hero__eyebrow">Crew Area</span>
+        <h1 class="hero__title">Crew Hub</h1>
+        <p class="hero__subtitle">Internal CoastJet resources for active crew members.</p>
       </div>
     </section>
 
-    <section class="crew-login">
+    <section class="crew-hub">
       <div class="container">
-        <div class="crew-login__card">
-          <span class="section__eyebrow">Internal Access</span>
-          <h2 class="section__title">Sign In</h2>
-          <p class="crew-login__intro">Use your CoastJet crew credentials to continue.</p>
+        <span class="section__eyebrow">Resources</span>
+        <h2 class="section__title">Crew Pages</h2>
 
-          <form class="crew-login__form" id="crewLoginForm" novalidate>
-            <label class="crew-login__label" for="crewEmail">Username</label>
-            <input class="crew-login__input" id="crewEmail" type="text" placeholder="CJPilots" required>
-
-            <label class="crew-login__label" for="crewPassword">Password</label>
-            <input class="crew-login__input" id="crewPassword" type="password" placeholder="••••" required>
-
-            <p class="crew-login__error" id="crewLoginError" aria-live="polite"></p>
-
-            <button type="submit" class="btn btn--primary">Sign In</button>
-          </form>
+        <div class="crew-hub__grid">
+          <a class="crew-hub__card" href="sops.html">
+            <span class="crew-hub__card-icon">◈</span>
+            <h3 class="crew-hub__card-title">Standard Operating Procedures</h3>
+            <p class="crew-hub__card-desc">Open the CoastJet SOP document and reference material.</p>
+          </a>
         </div>
       </div>
     </section>
