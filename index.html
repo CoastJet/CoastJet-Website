@@ -24,7 +24,7 @@
             </a>
 
             <!-- HAMBURGER -->
-            <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
             <span></span>
             <span></span>
             <span></span>
@@ -32,44 +32,22 @@
 
             <!-- LINKS -->
             <ul class="nav__links" id="navLinks">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="fleet.html">Fleet</a></li>
-            <li><a href="pilots.html">Pilots</a></li>
-            <li><a href="careers.html">Careers</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="fleet.html">Fleet</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="pilots.html">Pilots</a></li>
+              <li class="nav__item nav__item--has-dropdown">
+                <button class="nav__dropdown-toggle" type="button" aria-expanded="false">Operations</button>
+                <ul class="nav__dropdown" aria-label="Operations pages">
+                  <li><a href="ops-eu.html">EU Operations</a></li>
+                  <li><a href="ops-nz.html">NZ Operations</a></li>
+                </ul>
+              </li>
+              <li><a href="crew-login.html" class="nav__crew-link">Crew Login</a></li>
             </ul>
-
-            <!-- CREW PANEL TRIGGER (subtle — visible on desktop & mobile) -->
-            <button class="nav__crew-btn" id="crewToggle" aria-label="Open crew menu" aria-expanded="false">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
         </div>
     </nav>
   </header>
-
-  <!-- CREW PANEL OVERLAY -->
-  <div class="crew-panel" id="crewPanel" aria-hidden="true">
-    <div class="crew-panel__inner">
-      <div class="crew-panel__header">
-        <span class="crew-panel__label">Crew Area</span>
-        <button class="crew-panel__close" id="crewClose" aria-label="Close crew menu">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 2L20 20M20 2L2 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
-      <nav class="crew-panel__nav">
-        <a href="sops.html" class="crew-panel__link">
-          <span class="crew-panel__link-icon">◈</span>
-          <span class="crew-panel__link-text">Standard Operating Procedures</span>
-          <span class="crew-panel__link-arrow">→</span>
-        </a>
-        <!-- Add more crew links here as needed -->
-      </nav>
-      <p class="crew-panel__note">This area is for CoastJet crew members only.</p>
-    </div>
-  </div>
 
   <!-- HERO -->
   <main>
