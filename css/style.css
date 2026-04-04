@@ -1553,3 +1553,18 @@ a:hover { opacity: 0.75; }
 .crew-hub__card-desc {
   margin: 0;
 }
+
+.crew-hub-hero {
+  padding-top: calc(var(--nav-height) + var(--space-3xl));
+  padding-bottom: var(--space-3xl);
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.crew-hub-hero__content {
+  text-align: center;
+}
+
+.crew-hub-hero__content .hero__subtitle {
+  margin-inline: auto;
+}

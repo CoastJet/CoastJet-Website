@@ -46,9 +46,8 @@
   </header>
 
   <main>
-    <section class="hero" style="background-image: url('assets/careers_hero.jpg'); min-height: 70vh;">
-      <div class="hero__overlay"></div>
-      <div class="container hero__content">
+    <section class="crew-hub-hero">
+      <div class="container crew-hub-hero__content">
         <span class="hero__eyebrow">Crew Access</span>
         <h1 class="hero__title">Crew Login</h1>
         <p class="hero__subtitle">Sign in to open the CoastJet crew area.</p>
@@ -85,5 +84,29 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('crewLoginForm');
+      const usernameInput = document.getElementById('crewEmail');
+      const passwordInput = document.getElementById('crewPassword');
+      const error = document.getElementById('crewLoginError');
+
+      if (!form || !usernameInput || !passwordInput) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value;
+
+        if (username === 'CJPilots' && password === '737') {
+          window.location.assign('crew-hub.html');
+          return;
+        }
+
+        if (error) error.textContent = 'Incorrect username or password.';
+      });
+    });
+  </script>
 </body>
 </html>
