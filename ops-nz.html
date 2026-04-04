@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NZ Operations - CoastJet</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/favicon.jpg" type="image/png" />
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <div class="container">
+        <a href="index.html" class="nav__logo">
+          <img src="assets/favicon.jpg" alt="CoastJet Logo" class="nav__logo-img" />
+          <span class="nav__logo-text">CoastJet</span>
+        </a>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav__links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fleet.html">Fleet</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="pilots.html">Pilots</a></li>
+          <li class="nav__item nav__item--has-dropdown">
+            <button class="nav__dropdown-toggle active" type="button" aria-expanded="false">Operations</button>
+            <ul class="nav__dropdown" aria-label="Operations pages">
+              <li><a href="ops-eu.html">EU Operations</a></li>
+              <li><a href="ops-nz.html" class="active">NZ Operations</a></li>
+            </ul>
+          </li>
+          <li><a href="crew-login.html" class="nav__crew-link">Crew Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="background-image: url('assets/pilots_hero.jpg');">
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <span class="hero__eyebrow">Operations</span>
+        <h1 class="hero__title">NZ Operations</h1>
+        <p class="hero__subtitle">Our New Zealand branch connects regional demand with realistic turboprop-focused service.</p>
+      </div>
+    </section>
+
+    <section class="ops-region">
+      <div class="container">
+        <span class="section__eyebrow">Region Profile</span>
+        <h2 class="section__title">New Zealand Base Network</h2>
+        <p class="ops-region__intro">CoastJet New Zealand focuses on dependable regional flying, route discipline, and high-frequency local operations to support growth in the Pacific market.</p>
+
+        <div class="ops-bases-grid ops-bases-grid--single">
+          <article class="ops-base-card">
+            <span class="ops-base-card__tag">Regional Base</span>
+            <h3 class="ops-base-card__code">NZCH</h3>
+            <p class="ops-base-card__name">Christchurch International</p>
+            <p class="ops-base-card__desc">Our NZ base of operations. NZCH supports regional route development and turboprop operations across New Zealand sectors.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 CoastJet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
