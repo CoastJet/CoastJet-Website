@@ -1303,6 +1303,15 @@ a:hover { opacity: 0.75; }
    ============================================= */
 .nav__item { position: relative; }
 
+.nav__item--has-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 0.65rem;
+}
+
 .nav__dropdown-toggle {
   appearance: none;
   -webkit-appearance: none;
@@ -1330,7 +1339,7 @@ a:hover { opacity: 0.75; }
 
 .nav__dropdown {
   position: absolute;
-  top: calc(100% + 0.8rem);
+  top: 100%;
   left: 0;
   min-width: 210px;
   background: var(--color-surface);
