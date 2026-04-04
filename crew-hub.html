@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crew Hub - CoastJet</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/favicon.jpg" type="image/png" />
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <div class="container">
+        <a href="index.html" class="nav__logo">
+          <img src="assets/favicon.jpg" alt="CoastJet Logo" class="nav__logo-img" />
+          <span class="nav__logo-text">CoastJet</span>
+        </a>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav__links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fleet.html">Fleet</a></li>
+          <li><a href="pilots.html">Pilots</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li class="nav__item nav__item--has-dropdown">
+            <button class="nav__dropdown-toggle" type="button" aria-expanded="false">Operations</button>
+            <ul class="nav__dropdown" aria-label="Operations pages">
+              <li><a href="ops-eu.html">EU Operations</a></li>
+              <li><a href="ops-nz.html">NZ Operations</a></li>
+            </ul>
+          </li>
+          <li><a href="crew-login.html" class="nav__crew-link active">Crew Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="crew-hub-hero">
+      <div class="container crew-hub-hero__content">
+        <span class="hero__eyebrow">Crew Area</span>
+        <h1 class="hero__title">Crew Hub</h1>
+        <p class="hero__subtitle">Internal CoastJet resources for active crew members.</p>
+      </div>
+    </section>
+
+    <section class="crew-hub">
+      <div class="container">
+        <span class="section__eyebrow">Resources</span>
+        <h2 class="section__title">Crew Pages</h2>
+
+        <div class="crew-hub__grid">
+          <a class="crew-hub__card" href="sops.html">
+            <span class="crew-hub__card-icon">◈</span>
+            <h3 class="crew-hub__card-title">Standard Operating Procedures</h3>
+            <p class="crew-hub__card-desc">Open the CoastJet SOP document and reference material.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 CoastJet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

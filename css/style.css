@@ -1297,3 +1297,274 @@ a:hover { opacity: 0.75; }
 .nav__links a::after {
   transform-origin: right;
 }
+
+/* =============================================
+   NAV V1: OPERATIONS DROPDOWN + CREW LOGIN
+   ============================================= */
+.nav__item { position: relative; }
+
+.nav__item--has-dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 0.65rem;
+}
+
+.nav__dropdown-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font: inherit;
+  font-weight: var(--fw-medium);
+  font-size: 0.9rem;
+  line-height: 1;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+}
+
+.nav:not(.is-scrolled) .nav__dropdown-toggle {
+  color: rgba(232, 234, 240, 0.85);
+}
+
+.nav__dropdown-toggle:hover,
+.nav__dropdown-toggle.active,
+.nav__item--has-dropdown:hover .nav__dropdown-toggle {
+  color: var(--color-text);
+}
+
+.nav__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 210px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  list-style: none;
+  padding: 0.5rem;
+  display: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.nav__dropdown li { padding: 0; }
+
+.nav__dropdown a {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  border-radius: 7px;
+  color: var(--color-text-muted);
+}
+
+.nav__dropdown a:hover,
+.nav__dropdown a.active {
+  color: var(--color-text);
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+}
+
+.nav__item--has-dropdown:hover .nav__dropdown,
+.nav__item--has-dropdown.open .nav__dropdown {
+  display: block;
+}
+
+
+.nav__dropdown-toggle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-text);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav__dropdown-toggle:hover::after,
+.nav__dropdown-toggle.active::after,
+.nav__item--has-dropdown:hover .nav__dropdown-toggle::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+.nav__crew-link {
+  color: var(--color-accent) !important;
+  font-weight: var(--fw-semibold) !important;
+}
+
+/* =============================================
+   OPERATIONS + CREW LOGIN PAGE STYLES
+   ============================================= */
+.ops-region {
+  padding-block: var(--space-3xl);
+  background: var(--color-bg);
+}
+
+.ops-region__intro {
+  margin-bottom: var(--space-2xl);
+  max-width: 70ch;
+}
+
+.ops-bases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+}
+
+.ops-bases-grid--single {
+  max-width: 520px;
+}
+
+.ops-base-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--space-xl);
+}
+
+.ops-base-card__tag {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-alt);
+  border: 1px solid color-mix(in srgb, var(--color-accent-alt) 30%, transparent);
+  margin-bottom: var(--space-md);
+}
+
+.ops-base-card__code {
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
+}
+
+.ops-base-card__name {
+  color: var(--color-text);
+  font-weight: var(--fw-semibold);
+  margin-bottom: var(--space-sm);
+}
+
+.crew-login {
+  padding-block: var(--space-3xl);
+  background: var(--color-bg);
+}
+
+.crew-login__card {
+  max-width: 560px;
+  margin-inline: auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: var(--space-2xl);
+}
+
+.crew-login__intro { margin-bottom: var(--space-xl); }
+
+.crew-login__form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.crew-login__label {
+  font-size: 0.85rem;
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+}
+
+.crew-login__input {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+}
+
+@media (max-width: 768px) {
+  .nav__item--has-dropdown:hover .nav__dropdown { display: none; }
+
+  .nav__dropdown-toggle {
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+  }
+
+  .nav__dropdown {
+    position: static;
+    margin-top: var(--space-sm);
+    box-shadow: none;
+  }
+
+  .nav__item--has-dropdown.open .nav__dropdown { display: block; }
+}
+
+.crew-login__error {
+  min-height: 1.2rem;
+  color: #ff8f8f;
+  font-size: 0.85rem;
+}
+
+.crew-hub {
+  padding-block: var(--space-3xl);
+  background: var(--color-bg);
+}
+
+.crew-hub__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+}
+
+.crew-hub__card {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--space-xl);
+  transition: border-color 250ms ease, transform 250ms ease;
+}
+
+.crew-hub__card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+.crew-hub__card-icon {
+  color: var(--color-accent-alt);
+  font-size: 1.3rem;
+}
+
+.crew-hub__card-title {
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
+
+.crew-hub__card-desc {
+  margin: 0;
+}
+
+.crew-hub-hero {
+  padding-top: calc(var(--nav-height) + var(--space-3xl));
+  padding-bottom: var(--space-3xl);
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.crew-hub-hero__content {
+  text-align: center;
+}
+
+.crew-hub-hero__content .hero__subtitle {
+  margin-inline: auto;
+}
